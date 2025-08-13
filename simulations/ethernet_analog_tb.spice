@@ -1,0 +1,40 @@
+** sch_path: /home/pc/heichips25-ethernet/xschem/ethernet_analog_tb.sch
+**.subckt ethernet_analog_tb dn dp
+*.iopin dn
+*.iopin dp
+Vdata vdat GND 1.2
+Vsupply vdd GND 1.5
+x1 vdd vdat dn dp GND ethernet_analog
+**** begin user architecture code
+
+
+.param temp=27
+.control
+save all
+op
+dc Vdata 0 1.5 0.1
+plot v(vdat) v(dp) v(dn)
+.endc
+
+
+ .lib cornerMOSlv.lib mos_tt
+
+**** end user architecture code
+**.ends
+
+* expanding   symbol:  /home/pc/heichips25-ethernet/xschem/ethernet_analog.sym # of pins=5
+** sym_path: /home/pc/heichips25-ethernet/xschem/ethernet_analog.sym
+** sch_path: /home/pc/heichips25-ethernet/xschem/ethernet_analog.sch
+.subckt ethernet_analog VPWR data_in etherent_dn ethernet_dp VGND
+*.ipin data_in
+*.iopin etherent_dn
+*.iopin VGND
+*.iopin VPWR
+*.iopin ethernet_dp
+XM2 etherent_dn data_in VGND VGND sg13_lv_nmos w=0.15u l=0.13u ng=1 m=1
+XM1 etherent_dn data_in VPWR VPWR sg13_lv_pmos w=0.15u l=0.13u ng=1 m=1
+XR2 data_in ethernet_dp sub! rsil w=2.5e-6 l=0.5e-6 m=1 b=0
+.ends
+
+.GLOBAL GND
+.end

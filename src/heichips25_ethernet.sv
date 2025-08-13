@@ -3,9 +3,11 @@
 
 // Adapted from the Tiny Tapeout template
 
+`include "../macro_analog/line_driver.v"
+
 `default_nettype none
 
-module heichips25_template (
+module heichips25_ethernet (
     input  wire [7:0] ui_in,    // Dedicated inputs
     output wire [7:0] uo_out,   // Dedicated outputs
     input  wire [7:0] uio_in,   // IOs: Input path
@@ -13,7 +15,9 @@ module heichips25_template (
     output wire [7:0] uio_oe,   // IOs: Enable path (active high: 0=input, 1=output)
     input  wire       ena,      // always 1 when the design is powered, so you can ignore it
     input  wire       clk,      // clock
-    input  wire       rst_n     // reset_n - low to reset
+    input  wire       rst_n,    // reset_n - low to reset
+    output wire       ethernet_dp,
+    output wire       ethernet_dn
 );
 
     // List all unused inputs to prevent warnings
@@ -34,5 +38,20 @@ module heichips25_template (
     assign uo_out  = count;
     assign uio_out = count;
     assign uio_oe  = '1;
+
+
+    wire data_in_tst;
+    assign data_in_tst  = '1;
+    wire ehternet_dp_tst;
+    wire ehternet_dn_tst;
+
+    line_driver i_line_driver(
+        .data_in(data_in_tst),
+        .ethernet_dp(ehternet_dp_tst),
+        .ethernet_dn(ehternet_dn_tst)
+    );
+
+    assign ethernet_dp  = '1;
+    assign ethernet_dn  = '0;
 
 endmodule

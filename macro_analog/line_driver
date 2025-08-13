@@ -1,0 +1,16 @@
+MACROS:
+  line_driver:
+    gds:
+      - dir::macro_analog/line_driver.gds
+    lef:
+      - dir::macro_analog/line_driver.lef
+    nl:
+      - dir::macro_analog/line_driver.v
+    instances:
+      - TOP:
+        location: [20, 20]
+        orientation: N
+
+PDN_MACRO_CONNECTIONS:
+  - "TOP VPWR VGND VPWR VGND"
+
