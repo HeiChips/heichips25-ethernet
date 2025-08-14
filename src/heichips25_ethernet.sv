@@ -3,7 +3,7 @@
 
 // Adapted from the Tiny Tapeout template
 
-`include "../macro_analog/line_driver.v"
+//`include "../macro_analog/line_driver.v"
 
 `default_nettype none
 
@@ -40,16 +40,30 @@ module heichips25_ethernet (
     assign uio_oe  = '1;
 
 
-    wire data_in_tst;
-    assign data_in_tst  = '1;
-    wire ehternet_dp_tst;
-    wire ehternet_dn_tst;
+    // wire data_in_tst;
+    // assign data_in_tst  = '1;
+    // wire ehternet_dp_tst;
+    // wire ehternet_dn_tst;
 
-    line_driver i_line_driver(
-        .data_in(data_in_tst),
-        .ethernet_dp(ehternet_dp_tst),
-        .ethernet_dn(ehternet_dn_tst)
+    // line_driver line_driver_i(
+    //     .data_in(data_in_tst),
+    //     .ethernet_dp(ehternet_dp_tst),
+    //     .ethernet_dn(ehternet_dn_tst)
+    // );
+
+
+    logic [7:0] count_o;
+    logic counter_0_ovf;
+
+    counter_8bit counter_0 (
+	    .clk_i      (clk),
+	    .rst_ni     (rst_n),
+	    .en_i       (ena),
+	    
+        .count_o    (count_o[7:0]),
+        .ovf_o      (counter_0_ovf)
     );
+
 
     assign ethernet_dp  = '1;
     assign ethernet_dn  = '0;

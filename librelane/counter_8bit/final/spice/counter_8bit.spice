@@ -1,0 +1,266 @@
+* NGSPICE file created from counter_8bit.ext - technology: ihp-sg13g2
+
+* Black-box entry subcircuit for sg13g2_dfrbpq_1 abstract view
+.subckt sg13g2_dfrbpq_1 RESET_B VSS VDD D Q CLK
+.ends
+
+* Black-box entry subcircuit for sg13g2_fill_1 abstract view
+.subckt sg13g2_fill_1 VDD VSS
+.ends
+
+* Black-box entry subcircuit for sg13g2_decap_8 abstract view
+.subckt sg13g2_decap_8 VDD VSS
+.ends
+
+* Black-box entry subcircuit for sg13g2_nor4_1 abstract view
+.subckt sg13g2_nor4_1 A B C D Y VDD VSS
+.ends
+
+* Black-box entry subcircuit for sg13g2_nor2_1 abstract view
+.subckt sg13g2_nor2_1 A B Y VDD VSS
+.ends
+
+* Black-box entry subcircuit for sg13g2_buf_1 abstract view
+.subckt sg13g2_buf_1 A X VDD VSS
+.ends
+
+* Black-box entry subcircuit for sg13g2_nand2_1 abstract view
+.subckt sg13g2_nand2_1 Y A B VDD VSS
+.ends
+
+* Black-box entry subcircuit for sg13g2_nand3_1 abstract view
+.subckt sg13g2_nand3_1 B C A Y VDD VSS
+.ends
+
+* Black-box entry subcircuit for sg13g2_dlygate4sd3_1 abstract view
+.subckt sg13g2_dlygate4sd3_1 A VDD VSS X
+.ends
+
+* Black-box entry subcircuit for sg13g2_a21oi_1 abstract view
+.subckt sg13g2_a21oi_1 VSS VDD A1 A2 Y B1
+.ends
+
+* Black-box entry subcircuit for sg13g2_dfrbpq_2 abstract view
+.subckt sg13g2_dfrbpq_2 RESET_B VSS VDD D Q CLK
+.ends
+
+* Black-box entry subcircuit for sg13g2_fill_2 abstract view
+.subckt sg13g2_fill_2 VDD VSS
+.ends
+
+* Black-box entry subcircuit for sg13g2_nand4_1 abstract view
+.subckt sg13g2_nand4_1 B C A Y VDD VSS D
+.ends
+
+* Black-box entry subcircuit for sg13g2_tiehi abstract view
+.subckt sg13g2_tiehi VDD VSS L_HI
+.ends
+
+* Black-box entry subcircuit for sg13g2_decap_4 abstract view
+.subckt sg13g2_decap_4 VDD VSS
+.ends
+
+* Black-box entry subcircuit for sg13g2_inv_1 abstract view
+.subckt sg13g2_inv_1 VDD Y A VSS
+.ends
+
+* Black-box entry subcircuit for sg13g2_o21ai_1 abstract view
+.subckt sg13g2_o21ai_1 B1 VDD Y VSS A1 A2
+.ends
+
+* Black-box entry subcircuit for sg13g2_buf_8 abstract view
+.subckt sg13g2_buf_8 A X VDD VSS
+.ends
+
+* Black-box entry subcircuit for sg13g2_and3_1 abstract view
+.subckt sg13g2_and3_1 X A B C VDD VSS
+.ends
+
+* Black-box entry subcircuit for sg13g2_buf_2 abstract view
+.subckt sg13g2_buf_2 A X VDD VSS
+.ends
+
+* Black-box entry subcircuit for sg13g2_and4_1 abstract view
+.subckt sg13g2_and4_1 A B C D X VDD VSS
+.ends
+
+* Black-box entry subcircuit for sg13g2_nand2b_1 abstract view
+.subckt sg13g2_nand2b_1 Y B A_N VDD VSS
+.ends
+
+* Black-box entry subcircuit for sg13g2_or2_1 abstract view
+.subckt sg13g2_or2_1 VSS VDD X B A
+.ends
+
+* Black-box entry subcircuit for sg13g2_a21o_1 abstract view
+.subckt sg13g2_a21o_1 A2 A1 B1 X VDD VSS
+.ends
+
+.subckt counter_8bit VGND VPWR clk_i count_o[0] count_o[1] count_o[2] count_o[3] count_o[4]
++ count_o[5] count_o[6] count_o[7] en_i ovf_o rst_ni
+X_83_ net14 VGND VPWR net23 net11 clknet_1_1__leaf_clk_i sg13g2_dfrbpq_1
+XFILLER_3_23 VPWR VGND sg13g2_fill_1
+XFILLER_5_4 VPWR VGND sg13g2_decap_8
+X_49_ _12_ _13_ _14_ _15_ _16_ VPWR VGND sg13g2_nor4_1
+X_66_ net27 _27_ _05_ VPWR VGND sg13g2_nor2_1
+Xoutput7 net8 count_o[4] VPWR VGND sg13g2_buf_1
+X_82_ net21 VGND VPWR net32 net10 clknet_1_1__leaf_clk_i sg13g2_dfrbpq_1
+X_65_ _27_ net3 _26_ VPWR VGND sg13g2_nand2_1
+XFILLER_0_14 VPWR VGND sg13g2_decap_8
+X_48_ _15_ net9 net8 VPWR VGND sg13g2_nand2_1
+Xoutput10 net11 count_o[7] VPWR VGND sg13g2_buf_1
+Xoutput8 net9 count_o[5] VPWR VGND sg13g2_buf_1
+X_81_ net16 VGND VPWR _06_ net9 clknet_1_0__leaf_clk_i sg13g2_dfrbpq_1
+X_47_ _14_ net22 net10 VPWR VGND sg13g2_nand2_1
+X_64_ net33 _22_ net26 _26_ VPWR VGND sg13g2_nand3_1
+Xhold10 net10 VPWR VGND net31 sg13g2_dlygate4sd3_1
+XFILLER_1_0 VPWR VGND sg13g2_decap_8
+XFILLER_1_91 VPWR VGND sg13g2_fill_1
+Xoutput11 net12 ovf_o VPWR VGND sg13g2_buf_1
+Xoutput9 net10 count_o[6] VPWR VGND sg13g2_buf_1
+X_63_ VGND VPWR net7 _22_ _25_ net26 sg13g2_a21oi_1
+X_80_ net20 VGND VPWR net28 net8 clknet_1_0__leaf_clk_i sg13g2_dfrbpq_2
+XFILLER_9_58 VPWR VGND sg13g2_fill_1
+XFILLER_9_14 VPWR VGND sg13g2_fill_2
+XFILLER_0_49 VPWR VGND sg13g2_decap_8
+XFILLER_3_4 VPWR VGND sg13g2_fill_2
+X_46_ net6 net5 net7 _13_ VPWR VGND net4 sg13g2_nand4_1
+XFILLER_10_90 VPWR VGND sg13g2_fill_2
+Xhold11 _07_ VPWR VGND net32 sg13g2_dlygate4sd3_1
+X_78__14 VPWR VGND net15 sg13g2_tiehi
+XFILLER_6_37 VPWR VGND sg13g2_decap_4
+X_75__17 VPWR VGND net18 sg13g2_tiehi
+XFILLER_0_28 VPWR VGND sg13g2_fill_2
+X_62_ VGND VPWR _11_ _23_ _04_ _24_ sg13g2_a21oi_1
+XFILLER_0_39 VPWR VGND sg13g2_fill_1
+Xclkload0 VPWR clkload0/Y clknet_1_1__leaf_clk_i VGND sg13g2_inv_1
+X_45_ _12_ net1 net3 VPWR VGND sg13g2_nand2_1
+XFILLER_1_82 VPWR VGND sg13g2_decap_8
+Xhold12 net7 VPWR VGND net33 sg13g2_dlygate4sd3_1
+X_61_ net3 VPWR _24_ VGND _11_ _23_ sg13g2_o21ai_1
+X_44_ VPWR _11_ net33 VGND sg13g2_inv_1
+XFILLER_10_70 VPWR VGND sg13g2_decap_8
+Xhold13 _04_ VPWR VGND net34 sg13g2_dlygate4sd3_1
+Xclkbuf_1_0__f_clk_i clknet_0_clk_i clknet_1_0__leaf_clk_i VPWR VGND sg13g2_buf_8
+X_60_ _03_ net3 _21_ _23_ VPWR VGND sg13g2_and3_1
+X_43_ VPWR _10_ net31 VGND sg13g2_inv_1
+Xhold14 net9 VPWR VGND net35 sg13g2_dlygate4sd3_1
+XFILLER_1_40 VPWR VGND sg13g2_fill_2
+X_42_ VPWR _09_ net22 VGND sg13g2_inv_1
+XFILLER_10_83 VPWR VGND sg13g2_decap_8
+Xhold15 _28_ VPWR VGND net36 sg13g2_dlygate4sd3_1
+XFILLER_4_63 VPWR VGND sg13g2_fill_1
+XFILLER_1_75 VPWR VGND sg13g2_decap_8
+Xhold16 net6 VPWR VGND net37 sg13g2_dlygate4sd3_1
+XFILLER_7_63 VPWR VGND sg13g2_fill_2
+XFILLER_8_0 VPWR VGND sg13g2_decap_8
+XFILLER_1_7 VPWR VGND sg13g2_fill_2
+XFILLER_1_21 VPWR VGND sg13g2_decap_8
+XFILLER_7_20 VPWR VGND sg13g2_decap_8
+X_83__13 VPWR VGND net14 sg13g2_tiehi
+XFILLER_10_21 VPWR VGND sg13g2_decap_8
+XFILLER_1_9 VPWR VGND sg13g2_fill_1
+XFILLER_1_89 VPWR VGND sg13g2_fill_2
+Xclkbuf_0_clk_i clk_i clknet_0_clk_i VPWR VGND sg13g2_buf_8
+XFILLER_6_0 VPWR VGND sg13g2_decap_4
+XFILLER_10_77 VPWR VGND sg13g2_fill_2
+Xinput1 en_i net1 VPWR VGND sg13g2_buf_2
+XFILLER_1_14 VPWR VGND sg13g2_decap_8
+Xinput2 rst_ni net2 VPWR VGND sg13g2_buf_1
+X_79_ net13 VGND VPWR net34 net7 clknet_1_0__leaf_clk_i sg13g2_dfrbpq_2
+XFILLER_7_13 VPWR VGND sg13g2_decap_8
+X_80__19 VPWR VGND net20 sg13g2_tiehi
+XFILLER_4_47 VPWR VGND sg13g2_fill_2
+XFILLER_10_35 VPWR VGND sg13g2_fill_1
+X_78_ net15 VGND VPWR _03_ net6 clknet_1_0__leaf_clk_i sg13g2_dfrbpq_2
+XFILLER_2_91 VPWR VGND sg13g2_fill_1
+X_77_ net17 VGND VPWR _02_ net5 clknet_1_0__leaf_clk_i sg13g2_dfrbpq_2
+XFILLER_10_14 VPWR VGND sg13g2_decap_8
+XFILLER_4_0 VPWR VGND sg13g2_fill_1
+XFILLER_8_7 VPWR VGND sg13g2_decap_8
+X_76_ net19 VGND VPWR _01_ net4 clknet_1_1__leaf_clk_i sg13g2_dfrbpq_2
+XFILLER_7_27 VPWR VGND sg13g2_fill_2
+XFILLER_2_82 VPWR VGND sg13g2_decap_8
+X_77__16 VPWR VGND net17 sg13g2_tiehi
+X_59_ net37 net30 net1 _23_ VPWR VGND net29 sg13g2_nand4_1
+X_75_ net18 VGND VPWR net25 net12 clknet_1_1__leaf_clk_i sg13g2_dfrbpq_1
+X_58_ net1 net6 net30 net29 _22_ VPWR VGND sg13g2_and4_1
+X_82__20 VPWR VGND net21 sg13g2_tiehi
+XFILLER_10_28 VPWR VGND sg13g2_decap_8
+X_74_ VGND VPWR _09_ _30_ _08_ _32_ sg13g2_a21oi_1
+XFILLER_7_29 VPWR VGND sg13g2_fill_1
+X_57_ _21_ _19_ net37 VPWR VGND sg13g2_nand2b_1
+XFILLER_2_0 VPWR VGND sg13g2_decap_4
+X_73_ net2 VPWR _32_ VGND _14_ _29_ sg13g2_o21ai_1
+X_56_ _18_ _20_ _02_ VPWR VGND sg13g2_nor2_1
+XFILLER_10_0 VPWR VGND sg13g2_decap_8
+X_72_ VGND VPWR _10_ _29_ _07_ _31_ sg13g2_a21oi_1
+XFILLER_2_42 VPWR VGND sg13g2_fill_2
+XFILLER_2_75 VPWR VGND sg13g2_decap_8
+X_55_ _20_ net3 _19_ VPWR VGND sg13g2_nand2_1
+Xhold1 net11 VPWR VGND net22 sg13g2_dlygate4sd3_1
+X_71_ net3 VPWR _31_ VGND _10_ _29_ sg13g2_o21ai_1
+X_54_ net30 net29 net1 _19_ VPWR VGND sg13g2_nand3_1
+XFILLER_0_0 VPWR VGND sg13g2_decap_8
+Xhold2 _08_ VPWR VGND net23 sg13g2_dlygate4sd3_1
+X_70_ VGND VPWR _30_ _29_ _10_ sg13g2_or2_1
+XFILLER_2_4 VPWR VGND sg13g2_fill_1
+X_53_ VGND VPWR net1 net29 _18_ net30 sg13g2_a21oi_1
+XFILLER_8_65 VPWR VGND sg13g2_fill_1
+Xhold3 net12 VPWR VGND net24 sg13g2_dlygate4sd3_1
+XFILLER_5_11 VPWR VGND sg13g2_decap_4
+XFILLER_2_89 VPWR VGND sg13g2_fill_2
+X_52_ VGND VPWR net1 net29 _01_ _17_ sg13g2_a21oi_1
+Xhold4 _00_ VPWR VGND net25 sg13g2_dlygate4sd3_1
+X_51_ net3 VPWR _17_ VGND net1 net29 sg13g2_o21ai_1
+Xhold5 net8 VPWR VGND net26 sg13g2_dlygate4sd3_1
+XFILLER_5_35 VPWR VGND sg13g2_fill_2
+XFILLER_9_0 VPWR VGND sg13g2_decap_8
+X_50_ _12_ net24 _16_ _00_ VPWR VGND sg13g2_a21o_1
+XFILLER_8_35 VPWR VGND sg13g2_fill_2
+Xhold6 _25_ VPWR VGND net27 sg13g2_dlygate4sd3_1
+XFILLER_0_91 VPWR VGND sg13g2_fill_1
+XFILLER_5_25 VPWR VGND sg13g2_fill_1
+X_79__12 VPWR VGND net13 sg13g2_tiehi
+XFILLER_8_25 VPWR VGND sg13g2_fill_1
+XFILLER_8_14 VPWR VGND sg13g2_decap_8
+XFILLER_9_90 VPWR VGND sg13g2_fill_2
+XFILLER_0_70 VPWR VGND sg13g2_decap_8
+Xhold7 _05_ VPWR VGND net28 sg13g2_dlygate4sd3_1
+XFILLER_5_15 VPWR VGND sg13g2_fill_1
+XFILLER_10_7 VPWR VGND sg13g2_decap_8
+Xhold8 net4 VPWR VGND net29 sg13g2_dlygate4sd3_1
+XFILLER_9_80 VPWR VGND sg13g2_fill_1
+XFILLER_0_7 VPWR VGND sg13g2_decap_8
+XFILLER_3_60 VPWR VGND sg13g2_fill_2
+Xhold9 net5 VPWR VGND net30 sg13g2_dlygate4sd3_1
+XFILLER_6_82 VPWR VGND sg13g2_decap_4
+X_76__18 VPWR VGND net19 sg13g2_tiehi
+XFILLER_0_84 VPWR VGND sg13g2_decap_8
+Xclkbuf_1_1__f_clk_i clknet_0_clk_i clknet_1_1__leaf_clk_i VPWR VGND sg13g2_buf_8
+XFILLER_3_84 VPWR VGND sg13g2_decap_4
+XFILLER_0_30 VPWR VGND sg13g2_fill_1
+XFILLER_0_63 VPWR VGND sg13g2_decap_8
+XFILLER_3_52 VPWR VGND sg13g2_fill_2
+XFILLER_9_7 VPWR VGND sg13g2_decap_8
+Xfanout3 net2 net3 VPWR VGND sg13g2_buf_8
+XFILLER_6_41 VPWR VGND sg13g2_fill_2
+Xoutput3 net4 count_o[0] VPWR VGND sg13g2_buf_1
+XFILLER_0_21 VPWR VGND sg13g2_decap_8
+XFILLER_0_43 VPWR VGND sg13g2_fill_2
+X_69_ _06_ net3 net36 _29_ VPWR VGND sg13g2_and3_1
+XFILLER_6_86 VPWR VGND sg13g2_fill_2
+Xoutput4 net5 count_o[1] VPWR VGND sg13g2_buf_1
+XFILLER_3_10 VPWR VGND sg13g2_decap_4
+XFILLER_3_54 VPWR VGND sg13g2_fill_1
+XFILLER_0_77 VPWR VGND sg13g2_decap_8
+X_68_ net26 net33 net35 _29_ VPWR VGND _22_ sg13g2_nand4_1
+X_81__15 VPWR VGND net16 sg13g2_tiehi
+Xoutput5 net6 count_o[2] VPWR VGND sg13g2_buf_1
+XFILLER_3_0 VPWR VGND sg13g2_decap_4
+X_67_ _28_ _26_ net35 VPWR VGND sg13g2_nand2b_1
+XFILLER_9_43 VPWR VGND sg13g2_fill_2
+XFILLER_0_56 VPWR VGND sg13g2_decap_8
+Xoutput6 net7 count_o[3] VPWR VGND sg13g2_buf_1
+.ends
+
