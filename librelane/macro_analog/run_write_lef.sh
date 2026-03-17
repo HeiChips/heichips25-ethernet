@@ -64,7 +64,7 @@ for {set idx \$first} {\$idx <= \$last} {incr idx} {
 # -----------------------------
 # Write LEF
 # -----------------------------
-lef write ${LEFFILE}
+lef write ${LEFFILE} -hide -pinonly
 
 quit -noprompt
 EOF

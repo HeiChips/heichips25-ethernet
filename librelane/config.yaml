@@ -13,7 +13,7 @@ CLOCK_PERIOD: 10 # 10ns = 100MHz
 TOP_MARGIN_MULT: 1
 BOTTOM_MARGIN_MULT: 1
 LEFT_MARGIN_MULT: 6
-RIGHT_MARGIN_MULT: 6
+RIGHT_MARGIN_MULT: 0
 
 # Absolute die size
 FP_SIZING: absolute
@@ -32,7 +32,7 @@ FP_DEF_TEMPLATE: dir::def/heichips25_template_small_ethernet.def
 
 # Don't use power rings or TopMetal2 layer
 PDN_MULTILAYER: false
-RT_MAX_LAYER: TopMetal1
+RT_MAX_LAYER: Metal4 #TopMetal1
 
 # Enable for better SystemVerilog support
 #USE_SLANG: true
@@ -46,16 +46,27 @@ MACROS:
       - dir::macro_analog/line_driver.lef
     instances:
       line_driver_0:
-        location: [179, 1]
+        location: [179.84, 2.47] #179.84?
         orientation: N
 
 PDN_MACRO_CONNECTIONS:
   - "line_driver_0 VPWR VGND VPWR VGND"
 
 FP_PDN_VPITCH: 20
-FP_PDN_HPITCH: 20
+
+RSZ_DONT_TOUCH_RX: "^ethernet_d[pn]$"
 
 # Custom PDN config
 FP_PDN_CFG: dir::pdn_cfg.tcl
 
+FP_PDN_MULTILAYER: true
+#FP_PDN_HORIZONTAL_LAYER: Metal5
+FP_PDN_HWIDTH: 2.0
+FP_PDN_HPITCH: 21.8
+FP_PDN_HOFFSET: 0.0
+FP_PDN_HSPACING: 0.0
+
 CORE_AREA: [0, 0, 500, 198]
+
+#MAGIC_EXT_UNIQUE: notopports
+
