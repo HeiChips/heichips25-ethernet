@@ -47,40 +47,68 @@ MACRO line_driver
     DIRECTION INOUT ;
     USE GROUND ;
     PORT
-      LAYER Metal5 ;
-        RECT 0.000 156.180 320.160 158.180 ;
+      LAYER TopMetal1 ;
+        RECT 40.000 0.000 42.000 195.060 ;
     END
     PORT
-      LAYER Metal5 ;
-        RECT 0.000 108.580 320.160 110.580 ;
+      LAYER TopMetal1 ;
+        RECT 80.000 0.000 82.000 195.060 ;
     END
     PORT
-      LAYER Metal5 ;
-        RECT 0.000 60.980 320.160 62.980 ;
+      LAYER TopMetal1 ;
+        RECT 120.000 0.000 122.000 195.060 ;
     END
     PORT
-      LAYER Metal5 ;
-        RECT 0.000 13.380 320.160 15.380 ;
+      LAYER TopMetal1 ;
+        RECT 160.000 0.000 162.000 195.060 ;
+    END
+    PORT
+      LAYER TopMetal1 ;
+        RECT 200.000 0.000 202.000 195.060 ;
+    END
+    PORT
+      LAYER TopMetal1 ;
+        RECT 240.000 0.000 242.000 195.060 ;
+    END
+    PORT
+      LAYER TopMetal1 ;
+        RECT 280.000 0.000 282.000 195.060 ;
     END
   END VGND
   PIN VPWR
     DIRECTION INOUT ;
     USE POWER ;
     PORT
-      LAYER Metal5 ;
-        RECT 0.000 179.980 320.160 181.980 ;
+      LAYER TopMetal1 ;
+        RECT 20.000 0.000 22.000 195.060 ;
     END
     PORT
-      LAYER Metal5 ;
-        RECT 0.000 132.380 320.160 134.380 ;
+      LAYER TopMetal1 ;
+        RECT 60.000 0.000 62.000 195.060 ;
     END
     PORT
-      LAYER Metal5 ;
-        RECT 0.000 84.780 320.160 86.780 ;
+      LAYER TopMetal1 ;
+        RECT 100.000 0.000 102.000 195.060 ;
     END
     PORT
-      LAYER Metal5 ;
-        RECT 0.000 37.180 320.160 39.180 ;
+      LAYER TopMetal1 ;
+        RECT 140.000 0.000 142.000 195.060 ;
+    END
+    PORT
+      LAYER TopMetal1 ;
+        RECT 180.000 0.000 182.000 195.060 ;
+    END
+    PORT
+      LAYER TopMetal1 ;
+        RECT 220.000 0.000 222.000 195.060 ;
+    END
+    PORT
+      LAYER TopMetal1 ;
+        RECT 260.000 0.000 262.000 195.060 ;
+    END
+    PORT
+      LAYER TopMetal1 ;
+        RECT 300.000 0.000 302.000 195.060 ;
     END
   END VPWR
   OBS
@@ -102,6 +130,8 @@ MACRO line_driver
         RECT 1.890 48.720 318.270 146.260 ;
         RECT 3.210 46.300 318.270 48.720 ;
         RECT 1.890 11.380 318.270 46.300 ;
+      LAYER Metal5 ;
+        RECT 0.000 13.380 320.160 181.980 ;
   END
 END line_driver
 END LIBRARY

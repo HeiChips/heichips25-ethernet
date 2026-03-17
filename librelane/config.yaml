@@ -49,8 +49,8 @@ MACROS:
         location: [179.84, 2.47] #179.84?
         orientation: N
 
-PDN_MACRO_CONNECTIONS:
-  - "line_driver_0 VPWR VGND VPWR VGND"
+#PDN_MACRO_CONNECTIONS:
+#  - "line_driver_0 VPWR VGND VPWR VGND"
 
 FP_PDN_VPITCH: 20
 
@@ -59,7 +59,7 @@ RSZ_DONT_TOUCH_RX: "^ethernet_d[pn]$"
 # Custom PDN config
 FP_PDN_CFG: dir::pdn_cfg.tcl
 
-FP_PDN_MULTILAYER: true
+FP_PDN_MULTILAYER: false
 #FP_PDN_HORIZONTAL_LAYER: Metal5
 FP_PDN_HWIDTH: 2.0
 FP_PDN_HPITCH: 21.8
